@@ -45,7 +45,7 @@ const Sidenavbar = ({expand , setExpand}) => {
         <div className='relative'>
             <div className={`flex items-center cursor-pointer group relative ${expand?'gap-1 text-white/80 text-sm p-2.5 border border-primary rounded-lg hover:bg-white/10 cursor-pointer':'h-10 w-10 max-auto hover:bg-gray-500/30 rounded-lg absolute left-5.5'}`}>
                 <Image className={expand?'w-5':'w-6.5 max-auto absolute left-1.5'} src={expand?assets.phone_icon:assets.phone_icon_dull} alt=''/>
-                <div className={`absolute -top-60 pb-8 ${!expand&&'-right-40'} opacity-0 group-hover:opacity-100 hidden group-hover:block transition`}>
+                <div className={`absolute -top-60 pb-8 ${!expand&&'-right-40'} opacity-0 group-hover:opacity-100 hidden group-hover:block transition-all`}>
                     <div className='relative w-max bg-black text-white text-sm p-3 rounded-lg shadow-lg'>
                         <Image className='w-44'src={assets.qrcode} alt=''/>
                         <p>Scan to get DeepSeek App</p>
