@@ -1,5 +1,7 @@
 'use client';
 import { assets } from '@/assets/assets';
+import Messages from '@/components/Messages';
+import Promptbox from '@/components/Promptbox';
 import Sidenavbar from '@/components/Sidenavbar';
 import Image from 'next/image';
 import {useState} from 'react'
@@ -25,11 +27,13 @@ export default function Home() {
             <p className='text-small mt-2'>How can I help you today?</p>
             </>
             ):(
-              <div></div>
+              <div>
+                <Messages role='user' content='what is next js'/>
+              </div>
             )
           }
 
-          {/* prompt box */}
+          <Promptbox isloading={isloading} setIsloading={setIsloading}/>
           <p className='text-xs absolute bottom-1 text-gray-500'>AI-generated for reference only</p>
         </div>
       </div>
