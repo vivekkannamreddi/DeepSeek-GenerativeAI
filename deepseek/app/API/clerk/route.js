@@ -59,11 +59,12 @@ import { Webhook } from "svix";
 import connectdb from "@/config/db";
 import User from "@/models/User";
 import { headers } from "next/headers";
-import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 
 export async function POST(req) {
+    console.log("Webhook POST endpoint hit");   
     const wh = new Webhook(process.env.SIGNING_SECRET);
-    const headerPayload = headers();
+    const headerPayload = await headers();
 
     const svixHeaders = {
         "svix-id": headerPayload.get("svix-id"),
@@ -100,5 +101,5 @@ export async function POST(req) {
             break;
     }
 
-    return NextResponse.json({ message: "event received" });
+    return NextRequest.json({ message: "event received" });
 }
