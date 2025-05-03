@@ -6,7 +6,7 @@ import { headers } from "next/headers";
 import { NextRequest } from "next/server";
 
 export async function POST(req) {
-    console.log("Webhook POST endpoint hit");   
+    
     const wh = new Webhook(process.env.SIGNING_SECRET);
     const headerPayload = await headers();
 

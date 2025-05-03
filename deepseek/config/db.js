@@ -14,4 +14,5 @@ export default async function connectdb() {
         console.error("❌ Error connecting to MongoDB:", error);
         throw new Error("Database connection failed");
     }
+    return cached.conn
 }
